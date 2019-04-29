@@ -1,0 +1,4 @@
+﻿<link crossorigin="anonymous" media="all" integrity="sha512-OBabailf0Gja8rWVZO1xyYAw//CQdLOJF4riG050gTxsVqVD7az4Sq56hPWfv3AoaxuEhYXgQlGQcNxzZzDyVA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-d69542a4a3958db914b3bec3f757de26.css" />
+<link crossorigin="anonymous" media="all" integrity="sha512-wJhnzAfXEZIRVozNeRj3om7LYMKNuN4/pWiws3GvDrVcYuSnHZVWzVFF0nocd7vibgFePdnbVtr/SgFIOP/FcA==" rel="stylesheet" href="https://github.githubassets.com/assets/github-038ca28f0d66963cc8fcdd04180ca5e0.css" />
+<meta name="viewport" content="width=device-width">
+<p class="mt-2"><strong>Attention!</strong> Updating your profile with your name and a profile picture helps other FizMatHelper users get to know you.</p>

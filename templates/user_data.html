@@ -1,0 +1,23 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+	<style> a { color:#FFFFFF;  } font { color:FFFFFF;  } </style>
+	<a><h1 style="color:#ffffff"> {{name}} {{surname}} </h1></a>
+	<img src="{{path}}" width="300" height="300">
+	</br>
+	<i style="color:#ffffff">{{status}}</i>
+	</br>
+	</br>
+	<a href="/add_news">Добавить тему для обсуждения</a>
+{% for item in news %}
+    <div class="alert alert-dark bg-dark text-light" role="alert">
+        <a href="/news/{{item[0]}}"><h2>{{item[1]}}</h2></a>
+        <div>{{item[2]}}</div>
+	<a>Дата: {{item[3]}}</a>
+	</br>
+	{% if my_page %}
+        <a href="/delete_news/{{item[0]}}">Удалить обсуждение</a>
+    	{% endif %}
+    </div>
+{% endfor %}
+{% endblock %}

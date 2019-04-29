@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{{title}}</title>
+    <style>
+  	body { 
+              background: url(https://www.stcqa.com/wp-content/uploads/2018/03/Website-Design-Background.jpg);
+             }
+    </style>
+</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light text-danger bg-secondary">
+        <a class="navbar-toggler text-light border-light" href="/index">Форум Санжара</a>
+
+	{% if "username" in session %}
+		<a class="navbar-brand text-light" href="/index">Обсуждения</a>
+		{% if my_page %}
+		<a class="navbar-brand text-light" href="/edit">Изменить данные анкеты</a>
+		{% else %}
+		<a class="navbar-brand text-light" href="/{{cur_user_id}}">Моя страница</a>
+		{% endif %}
+    	<a class="navbar-toggler text-light border-light" href="/logout">Выйти</a>
+	{% endif %} 
+     
+      </nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="container" align="center">
+        {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

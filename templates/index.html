@@ -1,0 +1,19 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <style> a { font-size:20px; color:FFFFFF;  } font { font-size:20px; color:FFFFFF;  } </style>
+    <a align="center" href="/add_news">Добавить тему для обсуждения</a>
+{% for item in news %}
+    <div align="left" class="alert alert-light bg-dark" role="alert">
+        <i><a href="/news/{{item[0]}}"><h2>{{item[1]}}</h2></a></i>
+        <div align="left"><i><font size="5">{{item[2]}}</font></i></div>
+	<a>Дата: {{item[3]}}</a>
+	</br>
+	<a>Автор обсуждения: </a><a href="/{{item[4]}}">{{users[item[4]][0]}}</a>
+	</br>
+	{% if username == users[item[4]][1] %}
+        <a href="/delete_news/{{item[0]}}">Удалить обсуждение</a>
+    	{% endif %}
+    </div>
+{% endfor %}
+{% endblock %}

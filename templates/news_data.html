@@ -1,0 +1,34 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <style> h1 { font-size:40px; color:#FFFFFF } font { color:#FFFFFF } a { color:#FFFFFF;} p { font-size:30px; color:#FFFFFF; } font1 { color:#FFFFFF; } </style>
+    <div class="alert alert-dark bg-dark" role="alert">  
+	<b><h1>{{news[1]}}</h1></b>   
+    	<div><font size="5"><i>{{news[2]}}</i></font></div>
+	<font size="3"><a>Автор публикации: </a><a href="/{{news[4]}}">{{author}}</a></font>
+    </div>
+	<form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+            {{ form.content.label }}<br>
+            {{ form.content }}<br>
+            {% for error in form.content.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+	<h5>{{ form.submit() }}</h5 >
+	</form>
+	<font1 size="6">Комментарии:</font1>
+{% for item in cm %}
+    <div class="alert alert-dark bg-success text-light" role="alert">
+	<style> a { color:#FFFFFF } </style>
+        <a href="/{{item[1]}}"><h5>{{item[4]}}</h5></a>
+        <div><font size="4">{{item[3]}}</font></div>
+	{% if item[1] == cur_user_id %}
+        <font size="3"><a href="/delete_comment/{{item[0]}}">Удалить комментарий</a></font>
+    	{% endif %}
+    </div>
+{% endfor %}
+{% endblock %}

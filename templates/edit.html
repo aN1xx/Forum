@@ -1,0 +1,63 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <h1 style="color:#ffffff">Редактировать</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+	<p  style="color:#ffffff">
+            {{ form.username.label }}<br>
+            {{ form.username }}<br>
+            {% for error in form.username.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+	<p  style="color:#ffffff">
+            {{ form.password.label }}<br>
+            {{ form.password }}<br>
+            {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+	<p  style="color:#ffffff">
+            {{ form.photo.label }}<br>
+            {{ form.photo }}<br>
+            {% for error in form.photo.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+	<p  style="color:#ffffff">
+            {{ form.name.label }}<br>
+            {{ form.name }}<br>
+            {% for error in form.name.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p  style="color:#ffffff">
+            {{ form.surname.label }}<br>
+            {{ form.surname }}<br>
+            {% for error in form.surname.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p  style="color:#ffffff">
+            {{ form.status.label }}<br>
+            {{ form.status }}<br>
+            {% for error in form.status.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
